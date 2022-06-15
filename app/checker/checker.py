@@ -60,15 +60,16 @@ def limit_conn(*args_or_func, **decorator_kwargs):
         @functools.wraps(func)
         def wrapper(*args, **kwargs):
             out = is_allowed_to_connect(kwargs, decorator_kwargs)
-            
 
             # Post logic to close the connection
             if not out:
                 kwargs['id'] = ''
 
-            return func(*args, **kwargs) if not out else func(*args, **kwargs)
+            return func(*args, **kwargs)
+            # return func(*args, **kwargs) if not out else func(*args, **kwargs)
 
         return wrapper
 
-    return _decorator(args_or_func[0]) \
-        if args_or_func and callable(args_or_func[0]) else _decorator
+    return _decorator
+    # return _decorator(args_or_func[0]) \
+    #     if args_or_func and callable(args_or_func[0]) else _decorator

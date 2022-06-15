@@ -6,9 +6,9 @@ class ConnectionList():
     def __init__(self):
         self.conn = {}
 
-    # todo expose
+    # TODO: method to expose the connection object
 
-    # todo is into dict
+    # TODO: method to check if "key" is into conection object
 
 
 connList = ConnectionList()

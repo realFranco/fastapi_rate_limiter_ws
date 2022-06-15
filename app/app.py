@@ -4,12 +4,7 @@ To run the app:
 cd app
 uvicorn app:app --reload --port 8080
 """
-import json
-import asyncio
-import time
-from typing import Union
-
-from fastapi import FastAPI, WebSocket
+from fastapi import FastAPI
 
 from route.car import car_router
 
